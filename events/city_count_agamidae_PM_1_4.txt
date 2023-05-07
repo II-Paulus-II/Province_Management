@@ -1,0 +1,969 @@
+﻿namespace = city_count
+
+# city unity, happiness and prov resources
+##Agamidae Event for making the province UI window work
+##Only the 1 event needed 
+
+city_count.1 = {
+  type = country_event
+  hidden = yes
+
+  immediate = {
+    if = {
+      limit = { stability > 50 }
+      set_variable = {
+        name = stability_value
+        value = this.stability
+      }
+
+      change_variable = {
+        name = stability_value
+        add = -50
+      }
+
+      change_variable = {
+        name = stability_value
+        divide = 200
+      }
+
+      change_variable = {
+        name = stability_value
+        add = 1
+      }
+    }
+
+    if = {
+      limit = {
+        num_of_provinces > 0
+      }
+
+      every_country_state = {
+        save_temporary_scope_as = this_state
+
+        capital_scope = {
+          save_temporary_scope_as = state_capital
+          set_variable = {
+            name = state_research
+            value = 0
+          }
+          set_variable = {
+            name = state_avg_citizen_happiness
+            value = 0
+          }
+          set_variable = {
+            name = state_manpower
+            value = 0
+          }
+        }
+
+        every_state_province = {
+          save_temporary_scope_as = this_province
+
+          scope:state_capital = {
+            change_variable = {
+              name = state_manpower
+              add = prev.province_manpower_income
+            }
+          }
+
+          set_variable = {
+            name = total_count
+            value = 0
+          }
+
+          set_variable = {
+            name = same_culture
+            value = 0
+          }
+          set_variable = {
+            name = same_religion
+            value = 0
+          }
+
+          if = {
+            limit = { num_of_citizen >= 1 } # we need this check to avoid tens of *thousands* of error messages
+
+            # for happiness display
+
+            set_variable = {
+              name = avg_citizen_happiness
+              value = this.citizen_happiness
+            }
+            change_variable = {
+              name = avg_citizen_happiness
+              multiply = 100
+            }
+            set_variable = {
+              name = angry_citizens
+              value = 0
+            }
+
+            # research per city
+
+            set_variable = {
+              name = city_research
+              value = this.num_of_citizen
+            }
+
+            set_variable = {
+              name = city_citizen_happiness
+              value = this.citizen_happiness
+            }
+
+            set_variable = {
+              name = research_bonuses
+              value = 1
+            }
+
+            if = {
+              limit = { is_state_capital = yes }
+              change_variable = {
+                name = research_bonuses
+                add = 0.1
+              }
+            }
+
+            if = {
+              limit = { is_capital = yes }
+              change_variable = {
+                name = research_bonuses
+                add = 0.25
+              }
+            }
+
+            if = {
+              limit = {
+                this.region = root.capital_scope.region
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.35
+              }
+            }
+
+            if = {
+              limit = {
+                this.area = root.capital_scope.area
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.25
+              }
+            }
+
+            if = {
+              limit = {
+                exists = this.governor
+              }
+
+              set_variable = {
+                name = governor_skill
+                value = this.governor.finesse
+              }
+
+              change_variable = {
+                name = governor_skill
+                multiply = 0.025
+              }
+
+              change_variable = {
+                name = research_bonuses
+                add = var:governor_skill
+              }
+
+              if = {
+                limit = { governor_policy = local_autonomy }
+                change_variable = {
+                  name = research_bonuses
+                  add = -0.375
+                }
+              }
+              if = {
+                limit = { governor_policy = harsh_treatment }
+                change_variable = {
+                  name = research_bonuses
+                  add = -0.04
+                }
+              }
+            }
+
+            if = {
+              limit = { has_city_status = no }
+              change_variable = {
+                name = research_bonuses
+                add = -0.25
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  government = dictatorship
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.15
+              }
+            }
+
+
+            if = {
+              limit = {
+                root = {
+                  heritage = atropatenian_heritage
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.1
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  invention = global_citizen_output_inv_1
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  invention = global_citizen_output_inv_2
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  invention = global_citizen_output_inv_3
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  invention = global_citizen_output_inv_4
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  invention = global_citizen_output_inv_5
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  invention = polished_ceramics_invention
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.025
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  has_law = lex_licinia
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.2
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  has_country_modifier = marian_reforms_aristocracy_happy
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.25
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = formable_crete_capital_mod
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.25
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = final_resting_place_alexander
+                }
+              change_variable = {
+                name = research_bonuses
+                add = 0.5
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = alexander_in_niniveh
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.5
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = alexander_in_athens
+                }
+              change_variable = {
+                name = research_bonuses
+                add = 0.5
+              }
+            }
+
+            # if = {
+            #   limit = {
+            #     root = {
+            #       OR = {
+            #         has_this_omen = omen_tsovinar
+            #         has_this_omen = omen_kothar
+            #         has_this_omen = omen_dactyl
+            #         has_this_omen = omen_lugus
+            #         has_this_omen = omen_menrva
+            #         has_this_omen = omen_saraswati
+            #         has_this_omen = omen_paryushana
+            #         has_this_omen = omen_samuel
+            #         has_this_omen = omen_ptah
+            #         has_this_omen = omen_dsvininaue
+            #       }
+            #     }
+            #   }
+            #   change_variable = {
+            #     name = research_bonuses
+            #     add = 0.2
+            #   }
+            # }
+
+            if = {
+              limit = {
+                scope:this_state = {
+                  any_state_province = {
+                    OR = {
+                      trade_goods = spices
+                      is_importing_trade_good = spices
+                    }
+                  }
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  has_law = republican_integration_3
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.2
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  has_country_modifier = marian_reforms_modifier
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = -0.25
+              }
+            }
+
+            if = {
+              limit = {
+                exists = this.governor
+              }
+
+              if = {
+                limit = {
+                  this.governor = {
+                    has_trait = founder
+                  }
+                }
+                change_variable = {
+                  name = research_bonuses
+                  add = 0.1
+                }
+              }
+
+              if = {
+                limit = {
+                  this.governor = {
+                    has_trait = incapable
+                  }
+                }
+                change_variable = {
+                  name = research_bonuses
+                  add = -0.05
+                }
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  current_ruler = {
+                    has_trait = wise
+                  }
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  current_ruler = {
+                    has_trait = polymath
+                  }
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = 0.05
+              }
+            }
+
+            if = {
+              limit = {
+                root = {
+                  current_ruler = {
+                    has_trait = obsessive
+                  }
+                }
+              }
+              change_variable = {
+                name = research_bonuses
+                add = -0.05
+              }
+            }
+
+            change_variable = {
+              name = research_bonuses
+              multiply = var:city_citizen_happiness
+            }
+
+            change_variable = {
+              name = city_research
+              multiply = var:research_bonuses
+            }
+
+            change_variable = {
+              name = city_research
+              multiply = 0.25 # actual research points
+            }
+
+
+            if = {
+              limit = {
+                has_building = academy_building
+              }
+              change_variable = {
+                name = city_research
+                multiply = 1.025
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = museion_of_alexandria
+              }
+              change_variable = {
+                name = city_research
+                multiply = 1.025
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = province_improvement_athena_shrine
+              }
+              change_variable = {
+                name = city_research
+                multiply = 1.005
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = province_improvement_buddhism_guru_teacher
+              }
+              change_variable = {
+                name = city_research
+                multiply = 1.15
+              }
+            }
+
+            if = {
+              limit = {
+                has_province_modifier = province_improvement_philosopher_peripateticism
+              }
+              change_variable = {
+                name = city_research
+                multiply = 1.15
+              }
+            }
+
+
+            if = {
+              limit = {
+                province_unrest > 0
+              }
+              set_variable = {
+                name = this_unrest
+                value = this.province_unrest
+              }
+              change_variable = {
+                name = this_unrest
+                divide = 50
+              }
+              change_variable = {
+                name = this_unrest
+                multiply = -1
+              }
+              change_variable = {
+                name = this_unrest
+                add = 1
+              }
+              change_variable = {
+                name = city_research
+                multiply = var:this_unrest
+              }
+            }
+
+            # traits check
+
+            if = {
+              limit = {
+                exists = this.governor
+              }
+
+              if = {
+                limit = {
+                  this.governor = {
+                    has_trait = scholar
+                  }
+                }
+                change_variable = {
+                  name = city_research
+                  multiply = 1.1
+                }
+              }
+
+              if = {
+                limit = {
+                  this.governor = {
+                    has_trait = polymath
+                  }
+                }
+                change_variable = {
+                  name = city_research
+                  multiply = 1.1
+                }
+              }
+
+              if = {
+                limit = {
+                  this.governor = {
+                    has_trait = obsessive
+                  }
+                }
+                change_variable = {
+                  name = city_research
+                  multiply = 0.9
+                }
+              }
+            }
+
+            scope:state_capital = {
+              change_variable = {
+                name = state_research
+                add = prev.var:city_research
+              }
+            }
+
+            every_pops_in_province = {
+              if = {
+                limit = {
+                  pop_type = citizen
+                  pop_hapiness < 0.5
+                }
+                scope:this_province = {
+                  change_variable = {
+                    name = angry_citizens
+                    add = 1
+                  }
+                }
+              }
+            }
+          }
+
+          if = {
+            limit = { num_of_freemen >= 1 }
+
+            set_variable = {
+              name = avg_freemen_happiness
+              value = this.freemen_happiness
+            }
+            change_variable = {
+              name = avg_freemen_happiness
+              multiply = 100
+            }
+            set_variable = {
+              name = angry_freemen
+              value = 0
+            }
+
+            every_pops_in_province = {
+              if = {
+                limit = {
+                  pop_type = freemen
+                  pop_hapiness < 0.5
+                }
+                scope:this_province = {
+                  change_variable = {
+                    name = angry_freemen
+                    add = 1
+                  }
+                }
+              }
+            }
+          }
+
+          if = {
+            limit = { num_of_tribesmen >= 1 }
+
+            set_variable = {
+              name = avg_tribesmen_happiness
+              value = this.tribesmen_happiness
+            }
+            change_variable = {
+              name = avg_tribesmen_happiness
+              multiply = 100
+            }
+            set_variable = {
+              name = angry_tribesmen
+              value = 0
+            }
+
+            every_pops_in_province = {
+              if = {
+                limit = {
+                  pop_type = tribesmen
+                  pop_hapiness < 0.5
+                }
+                scope:this_province = {
+                  change_variable = {
+                    name = angry_tribesmen
+                    add = 1
+                  }
+                }
+              }
+            }
+          }
+
+          if = {
+            limit = { num_of_slaves >= 1 }
+
+            set_variable = {
+              name = avg_slaves_happiness
+              value = this.slaves_happiness
+            }
+            change_variable = {
+              name = avg_slaves_happiness
+              multiply = 100
+            }
+            set_variable = {
+              name = angry_slaves
+              value = 0
+            }
+
+            every_pops_in_province = {
+              if = {
+                limit = {
+                  pop_type = slaves
+                  pop_hapiness < 0.5
+                }
+                scope:this_province = {
+                  change_variable = {
+                    name = angry_slaves
+                    add = 1
+                  }
+                }
+              }
+            }
+          }
+
+          every_pops_in_province = {
+            scope:this_province = {
+              change_variable = {
+                name = total_count
+                add = 1
+              }
+            }
+
+            if = {
+              limit = {
+                pop_culture = root.culture
+              }
+              scope:this_province = {
+                change_variable = {
+                  name = same_culture
+                  add = 1
+                }
+              }
+            }
+
+            if = {
+              limit = {
+                pop_religion = root.religion
+              }
+              scope:this_province = {
+                change_variable = {
+                  name = same_religion
+                  add = 1
+                }
+              }
+            }
+          }
+
+          set_variable = {
+            name = culture_unity
+            value = var:same_culture
+          }
+          set_variable = {
+            name = religion_unity
+            value = var:same_religion
+          }
+
+          change_variable = {
+            name = culture_unity
+            multiply = 100
+          }
+    			change_variable = {
+            name = culture_unity
+            divide = var:total_count
+          }
+
+          change_variable = {
+            name = religion_unity
+            multiply = 100
+          }
+
+    			change_variable = {
+            name = religion_unity
+            divide = var:total_count
+          }
+        }
+
+        scope:state_capital = {
+
+          if = {
+            limit = {
+              root = {
+                invention = book_binding_invention
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 1.05
+            }
+          }
+
+          if = {
+            limit = {
+              root = {
+                current_ruler = {
+                  has_trait = lagids
+                }
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 1.05
+            }
+          }
+
+          if = {
+            limit = {
+              root = {
+                has_law = scholarly_pursuits_law
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 1.2
+            }
+          }
+
+          if = {
+            limit = {
+              root = {
+                idea = idea_patron_scholars
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 1.2
+            }
+          }
+
+
+          if = {
+            limit = {
+              root = {
+                has_high_economic_policy = income_tax
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 0.8
+            }
+          }
+
+          if = {
+            limit = {
+              scope:this_state = {
+                any_state_province = {
+                  OR = {
+                    trade_goods = papyrus
+                    is_importing_trade_good = papyrus
+                  }
+                }
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 1.2
+            }
+          }
+
+          if = {
+            limit = {
+              scope:this_state = {
+                any_state_province = {
+                  OR = {
+                    trade_goods = earthware
+                    is_importing_trade_good = earthware
+                  }
+                }
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = 1.05
+            }
+          }
+
+          if = {
+            limit = {
+              root = {
+                has_variable = stability_value
+              }
+            }
+            change_variable = {
+              name = state_research
+              multiply = root.var:stability_value
+            }
+          }
+
+          #if = {
+          #  limit = {
+          #   root = {
+          #      OR = {
+           #       has_this_omen = omen_insight
+           #       has_this_omen = omen_athena
+           #       has_this_omen = omen_magi
+            #      has_this_omen = omen_wisdom
+             #   }
+            #  }
+        #    }
+           # change_variable = {
+          #    name = state_research
+             # multiply = 1.1
+         #   }
+         # }
+
+          scope:this_state = {
+            every_state_province = {
+              set_variable = {
+                name = state_research
+                value = scope:state_capital.var:state_research
+              }
+            }
+          }
+
+          change_variable = {
+            name = state_manpower
+            multiply = 1000
+          }
+          scope:this_state = {
+            every_state_province = {
+              set_variable = {
+                name = state_manpower
+                value = scope:state_capital.var:state_manpower
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

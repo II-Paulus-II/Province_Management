@@ -1,0 +1,16 @@
+﻿l_english:
+ #####################################################################:0 ""
+ # New Modifiers
+ ###################################################################:0 ""
+ founding_town_in_progress:0 "Building Town in Progress"
+ desc_founding_town_in_progress:0 "The people here are hard at work building their new Town."
+ fishery_building_cost:0 "Fishing Harbour Cost"
+ enacting_territory_policy:0 "Applying Territory Policy"
+ settlement_food_policy:0 "Local Food Policy"
+ local_foodgoods_policy:0 "Foodgoods Production Policy"
+ local_manpower_policy:0 "Territory Manpower Policy"
+ wealthy_province_policy:0 "Territory Wealth Policy"
+ fortified_province_policy:0 "Fortified Territory Policy"
+ local_mining_policy:0 "Territory Mining Policy"
+ local_production_policy:0 "City Production Policy"
+ local_research_policy:0 "Research City Policy"

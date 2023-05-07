@@ -1,0 +1,14 @@
+﻿##Agamidae's events to re-calculate stuff for the Province UI
+
+monthly_country_pulse = {
+
+	events = {
+		city_count.1 # province resources and avg happiness
+  }
+}
+
+on_game_initialized = {
+	events = {
+		city_count.1
+	}
+}

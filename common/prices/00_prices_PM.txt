@@ -1,0 +1,54 @@
+﻿price_found_town = {
+	political_influence = 20
+	gold = 50
+}
+
+price_found_city = {
+	political_influence = 35
+	gold = 100
+}
+
+price_found_metropolis = {
+	political_influence = 50
+	gold = 500
+}
+
+price_revoke_city_status = {
+	tyranny = 5
+}
+
+price_state_investment_military = {
+	political_influence = 25
+	gold = 50
+}
+
+price_state_investment_civic = {
+	political_influence = 25
+	gold = 50
+}
+
+price_state_investment_oratory = {
+	political_influence = 25
+	gold = 50
+}
+
+price_state_investment_religious = {
+	political_influence = 25
+	gold = 50
+}
+
+price_local_civ_button = {
+	political_influence = 10
+	gold = 25
+}
+
+price_enact_policy = {
+	political_influence = 5
+	gold = 15
+}
+
+enact_holy_site = {
+	political_influence = 50
+	gold = 500
+}
+

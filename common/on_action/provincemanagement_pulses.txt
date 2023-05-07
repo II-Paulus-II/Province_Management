@@ -1,0 +1,82 @@
+﻿##Build State Improvement Pulses 
+		
+buildtown_pulse = {
+	random_events = {
+		85 = 0
+		15 = state_improvement.9	#Event to make settlement a town for AI
+	}
+
+}
+
+buildcity_pulse = {
+	random_events = {
+		75 = 0
+		25 = state_improvement.11	#AI Makes a city - gated by pops so higher chance
+	}
+
+}
+
+foodpolicy_pulse = {
+	random_events = {
+		95 = 0
+		5 = state_improvement.20
+	}
+
+}
+
+foodgoodspolicy_pulse = {
+	random_events = {
+		90 = 0
+		10 = state_improvement.21
+	}
+
+}
+
+miningpolicy_pulse = {
+	random_events = {
+		95 = 0
+		5 = state_improvement.22
+	}
+
+}
+
+manpowerpolicy_pulse = {
+	random_events = {
+		98 = 0
+		2 = state_improvement.23
+	}
+
+}
+
+wealthypolicy_pulse = {
+	random_events = {
+		95 = 0
+		5 = state_improvement.24
+	}
+
+}
+
+defensepolicy_pulse = {
+	random_events = {
+		95 = 0
+		5 = state_improvement.25
+	}
+
+}
+
+productionpolicy_pulse = {
+	random_events = {
+		80 = 0
+		20 = state_improvement.26
+	}
+
+}
+
+researchcity_pulse = {
+	random_events = {
+		80 = 0
+		20 = state_improvement.27
+	}
+
+}
+

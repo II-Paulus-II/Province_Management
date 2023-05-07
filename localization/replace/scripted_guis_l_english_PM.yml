@@ -1,0 +1,12 @@
+﻿l_english:
+ #####################################################################:0 ""
+ # Province Upgrade Localization
+ ###################################################################:0 ""
+ build_city_button_confirm_t:0 "Found City"
+ build_city_button_confirm_desc:0 "Are you sure you want to found a city in #Y [ROOT.GetProvince.GetName]#!?"
+ build_city_button_title_tt:0 "#T Found City#!\nTowns can be upgraded into Cities, increasing their population capacity and enabling the construction of more buildings."
+ building_city_in_progress_tt:0 "This Town is being upgraded into a City."
+ revoke_city_status_button_confirm_t:0 "Revoke City Status"
+ revoke_city_status_button_confirm_desc:0 "Are you sure you want to revoke city status from #Y [ROOT.GetProvince.GetName]#! ? This will turn it back into a settlement."
+ revoke_city_status_button_title_tt:0 "#T Revoke City Status#!\nRevoking city status from a City or a Metropolis will turn it into a Settlement, sharply reducing its population capacity and causing local resentment. All Territory Policies will also be revoked."
+

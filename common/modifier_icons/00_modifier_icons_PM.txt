@@ -1,0 +1,27 @@
+﻿#example = {
+#	positive = "gfx/interface/icons/example_positive.dds" # Will be used if >= 0 or if `negative` isn't set
+#	negative = "gfx/interface/icons/example_negative.dds" # Will be used if < 0 (optional)
+#	default = yes # The first one in the file with this flag will be used as default
+#}
+
+price_found_town_cost_modifier = {
+	positive = "gfx/interface/icons/modifiers/price_found_town_cost_modifier.dds"
+}
+
+fishery_building_cost = {
+	positive = "gfx/interface/icons/modifiers/fishery_building_cost.dds"
+}
+
+base_resources = {
+	positive = "gfx/interface/icons/modifiers/base_resources.dds"
+}
+
+settlement_food_policy = {
+	positive = "gfx/interface/icons/modifiers/settlement_food_policy.dds"
+}
+
+price_enact_policy_cost_modifier = {
+	positive = "gfx/interface/icons/modifiers/price_enact_policy_cost_modifier.dds"
+}
+
+

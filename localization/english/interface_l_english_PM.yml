@@ -1,0 +1,14 @@
+﻿l_english:
+ #####################################################################:0 ""
+ # New Items
+ ###################################################################:0 ""
+ town:0 "Town"
+ UPGRADE_CITY_POLICY_TITLE:0 "Territory Policies"
+ cultural_unity_tooltip:1 "#T Cultural Unity#!\n[ProvinceWindow.GetProvince.GetCultureBreakdown]"
+ religious_unity_tooltip:1 "#T Religious Unity#!\n[ProvinceWindow.GetProvince.GetReligionBreakdown]"
+ wrong_culture_tooltip:1 "This territory is #R not#! of our culture!\n [ProvinceWindow.GetProvince.GetDominantCulture.GetTooltip]"
+ wrong_religion_tooltip:1 "This territory is #R not#! of our religion!\n [ProvinceWindow.GetProvince.GetReligion.GetTooltip]"
+
+
+ # Culture
+ PROVINCE_TOOLTIP_culture:1 "[PROVINCE.GetCultureBreakdown]\nDominant Culture: [PROVINCE.GetCulture.GetName|Y]\nCulture Group: [PROVINCE.GetCulture.GetCultureGroup.GetName|Y]"

@@ -1,0 +1,73 @@
+﻿city_metropolis = {
+	
+	rank_modifier = {
+		local_population_capacity = 25
+		local_population_capacity_modifier = 0.25
+		available_holdings = 2
+		local_building_slot = 5
+		local_pop_promotion_speed_modifier = 0.10
+		local_migration_attraction = 2
+		local_state_trade_routes = 1
+		local_defensive = 0.15
+		garrison_size = 0.15
+		local_citizen_desired_pop_ratio = 0.35
+		local_freemen_desired_pop_ratio = 0.15
+	}
+	
+	color = hsv { 0.155 0.8 0.5 }
+	is_established_city = yes
+	holy_site_treasure_slots = 3
+	
+}
+
+city = {
+	
+	rank_modifier = {
+		local_population_capacity = 15
+		local_population_capacity_modifier = 0.15
+		available_holdings = 1
+		local_building_slot = 3
+		local_citizen_desired_pop_ratio = 0.15
+		local_freemen_desired_pop_ratio = 0.10
+	}
+	
+	color = hsv { 0.155  0.6  0.1 }
+	is_established_city = yes
+	holy_site_treasure_slots = 2
+	
+}
+
+town = {
+	
+	rank_modifier = {
+		local_migration_speed_modifier = -0.25
+		local_population_capacity = 10
+		available_holdings = 1
+		local_building_slot = 2
+		local_pop_promotion_speed_modifier = -0.15
+		local_goods_from_slaves = -3
+		local_monthly_food_modifier = 0.25
+	}
+	color = hsv { 0.1  0.3  0.3 }
+	is_established_city = yes
+	holy_site_treasure_slots = 2
+
+}
+
+settlement = {
+	
+	rank_modifier = {
+		local_migration_speed_modifier = -0.75
+		local_migration_attraction = -3
+		local_population_capacity = 5
+		local_output_modifier = -0.25
+		local_pop_promotion_speed_modifier = -0.25
+		local_goods_from_slaves = -5
+		local_monthly_food_modifier = 0.25
+	}
+	
+	color = hsv { 0.1  0.1  0.5 }
+	default = yes
+	holy_site_treasure_slots = 1
+	
+}

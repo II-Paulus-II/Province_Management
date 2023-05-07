@@ -1,0 +1,248 @@
+﻿###
+
+
+city_count = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('total_count').GetValue|0]" }
+}
+same_culture = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('same_culture').GetValue|0]" }
+}
+same_religion = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('same_religion').GetValue|0]" }
+}
+culture_unity = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('culture_unity').GetValue|0]%" }
+}
+religion_unity = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('religion_unity').GetValue|0]%" }
+}
+
+
+######
+
+avg_citizen_happiness = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('avg_citizen_happiness').GetValue|0]" }
+}
+
+happy_citizens = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_citizen_happiness
+    var:avg_citizen_happiness >= 66
+  }
+}
+
+neutral_citizens = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_citizen_happiness
+    var:avg_citizen_happiness >= 33
+    var:avg_citizen_happiness < 66
+  }
+}
+
+mad_citizens = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_citizen_happiness
+    var:avg_citizen_happiness < 33
+  }
+}
+
+angry_citizens = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('angry_citizens').GetValue|0]" }
+  is_shown = {
+    has_variable = angry_citizens
+    var:angry_citizens > 0
+  }
+}
+
+###
+
+avg_freemen_happiness = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('avg_freemen_happiness').GetValue|0]" }
+}
+
+happy_freemen = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_freemen_happiness
+    var:avg_freemen_happiness >= 66
+  }
+}
+
+neutral_freemen = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_freemen_happiness
+    var:avg_freemen_happiness >= 33
+    var:avg_freemen_happiness < 66
+  }
+}
+
+mad_freemen = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_freemen_happiness
+    var:avg_freemen_happiness < 33
+  }
+}
+
+angry_freemen = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('angry_freemen').GetValue|0]" }
+  is_shown = {
+    has_variable = angry_freemen
+    var:angry_freemen > 0
+  }
+}
+
+###
+
+avg_tribesmen_happiness = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('avg_tribesmen_happiness').GetValue|0]" }
+}
+
+happy_tribesmen = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_tribesmen_happiness
+    var:avg_tribesmen_happiness >= 66
+  }
+}
+
+neutral_tribesmen = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_tribesmen_happiness
+    var:avg_tribesmen_happiness >= 33
+    var:avg_tribesmen_happiness < 66
+  }
+}
+
+mad_tribesmen = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_tribesmen_happiness
+    var:avg_tribesmen_happiness < 33
+  }
+}
+
+angry_tribesmen = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('angry_tribesmen').GetValue|0]" }
+
+  is_shown = {
+    has_variable = angry_tribesmen
+    var:angry_tribesmen > 0
+  }
+}
+
+###
+
+avg_slaves_happiness = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('avg_slaves_happiness').GetValue|0]" }
+}
+
+happy_slaves = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_slaves_happiness
+    var:avg_slaves_happiness >= 66
+  }
+}
+
+neutral_slaves = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_slaves_happiness
+    var:avg_slaves_happiness >= 33
+    var:avg_slaves_happiness < 66
+  }
+}
+
+mad_slaves = {
+  scope = province
+
+  is_shown = {
+    has_variable = avg_slaves_happiness
+    var:avg_slaves_happiness < 33
+  }
+}
+
+angry_slaves = {
+  scope = province
+  effect = { custom_tooltip = "[THIS.Var('angry_slaves').GetValue|0]" }
+  is_shown = {
+    has_variable = angry_slaves
+    var:angry_slaves > 0
+  }
+}
+
+
+######
+
+wait_check = {
+  scope = province
+
+  is_shown = {
+    has_variable = state_research
+  }
+}
+
+state_research = {
+  scope = province
+
+  effect = { custom_tooltip = "[THIS.Var('state_research').GetValue|1]" }
+
+  is_shown = {
+    has_variable = state_research
+    var:state_research >= 0.1
+  }
+}
+
+state_manpower = {
+  scope = province
+
+  effect = { custom_tooltip = "[THIS.Var('state_manpower').GetValue|0]" }
+
+  is_shown = {
+    has_variable = state_manpower
+    var:state_manpower >= 1
+  }
+}
+
+### for debug
+
+research_bonuses = {
+  scope = province
+
+  effect = { custom_tooltip = "[THIS.Var('research_bonuses').GetValue|2]" }
+}
+
+city_research = {
+  scope = province
+
+  effect = { custom_tooltip = "[THIS.Var('city_research').GetValue|2]" }
+}

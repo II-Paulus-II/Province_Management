@@ -1,0 +1,25 @@
+﻿pop_view = {
+	scope = country
+
+  ai_is_valid = {
+		always = no
+	}
+
+  is_shown = {
+    NOT = {
+      has_variable = pop_view
+    }
+  }
+
+  effect = {
+    if = {
+      limit = {
+        has_variable = pop_view
+      }
+      remove_variable = pop_view
+    }
+		else = {
+			set_variable = pop_view
+		}
+  }
+}

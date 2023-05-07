@@ -1,0 +1,78 @@
+﻿##################################################################################################
+# scriptable and usable for event-system below.
+##################################################################################################
+
+founding_city_in_progress = { 
+	local_output_modifier = -0.75
+	show_in_outliner = yes
+}
+
+founding_metropolis_in_progress = { 
+	local_output_modifier = -1
+	show_in_outliner = yes
+}
+
+founding_town_in_progress = {
+	local_output_modifier = -0.5
+	show_in_outliner = yes
+}
+
+local_civilization_pmod_stack = {
+	local_country_civilization_value = 1
+	local_monthly_civilization = 0.01
+	local_output_modifier = 0.05
+}
+
+enacting_territory_policy = {
+	local_output_modifier = -0.1
+	show_in_outliner = yes
+}
+
+settlement_food_policy = {	##Settlement or Town - Event StateImprovement12
+	local_monthly_food = 3
+	local_slaves_output = -0.25
+}
+
+local_foodgoods_policy = {	##Food Trade Goods Only - Event StateImprovement13
+	base_resources = 1
+	local_goods_from_slaves = -1
+	local_slaves_output = -0.25
+}
+
+local_manpower_policy = {	##Town/City/Metropolis - Event StateImprovement14
+	local_manpower_modifier = 0.15
+	local_commerce_value_modifier = -0.15
+}
+
+wealthy_province_policy = {	##Town/City/Metropolis - Event StateImprovement15
+	local_tax_modifier = 0.10
+	local_commerce_value_modifier = 0.10
+}
+
+fortified_province_policy = { ##Town/City - Event StateImprovement16
+	local_defensive = 0.15
+	garrison_size = 0.15
+	local_output_modifier = -0.15
+}
+
+local_mining_policy = {	##Settlement/Town - Event StateImprovement17
+	base_resources = 1
+	local_goods_from_slaves = -1
+	local_slaves_output = -0.25
+}
+
+local_production_policy = {	## City/Metropolis - Event StateImprovement18
+	base_resources = 2
+	local_goods_from_slaves = -3
+	local_slaves_output = -0.5
+}
+
+local_research_policy = {	##City/Metropolis - Event StateImprovement19
+	local_research_points_modifier = 0.15
+}
+
+
+
+
+
+

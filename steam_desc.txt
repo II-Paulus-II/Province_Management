@@ -1,0 +1,73 @@
+STEAM DESCRIPTION
+
+[h1]UPDATED for Archimedes patch 1.4.[/h1]
+
+This mod has very few changes for patch 1.4  -  Enjoy finding them out.
+
+[h1]Update 6/5/20[/h1]
+
+Some UI upgrades which should make some people slightly happier with the mod and further spartan improvements have indeed been fixed. 
+
+I have not nerfed manpower in this mod so players using it will see that the numbers are larger than vanilla. As far as nerfing these numbers go, when 1.5 is released and this mod is updated for it, the manpower numbers will be close enough to vanilla. 
+
+[b]Notice for hotfix 16th April[/b]
+
+This hasn't created any compatibility issues with this mod, the only thing is that manpower has been nerfed pretty hard and as such I would like users of this mod to give me feedback with respect the 1.4.2 hotfix. 
+
+[B]Update 9th April[/B]
+
+Small Fix for monarchy loyalty. This is only touched because pop ratios are set in the same modifier xD
+
+[b] If you use Better UI 1.4 by Agamidae, load this mod AFTER in the list or it will not work, strictly speaking this mod will work standalone however.[/b]
+
+I am 99% sure that there are no gamechanging bugs in this version of the mod, but as always please if you discover something let me know. Note that ordinarily one cannot build academies in towns, but that some greek towns have them and as I didn't want to touch the default setup file in main for compatibility reasons they get to keep them. 
+
+I have published a version of the mod which will always be compatible with 1.3.2 Livy.
+
+It is found here
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=2043370126
+
+Please use this mod for your 1.3 Livy save games as nothing has changed in that version of province management. Please also unsubscribe from that version of the mod when you no longer need that version of the mod for your save games.
+
+-------------------------------------------------------
+
+[h1][b]Province Management[/b][/h1]
+
+This mod aims to bring some depth to province management. Hopefully this will make the game more fun!
+
+[h1]Like almost all Mods it is not compatible with achievements
+
+Start a NEW GAME to enjoy this mod.[/h1]
+
+[b][u]Changes and Additions[/u][/b]
+
+[b]First,[/b] this mod changes the province UI to be much more pleasing to the eye. This window was made by Agamidae who kindly gave permission to me to change the UI in this mod. To be quite honest I would have felt bad about publishing the mod if it relied on the vanilla UI. Thanks a ton to him! I only had to change a few things from his window, as well as making it larger because I needed room for more modifiers. 
+
+His mod for the whole UI is here - https://steamcommunity.com/sharedfiles/filedetails/?id=1845165876
+
+[b]Second,[/b] there is another territory rank created between the rank of settlement and city. The town does not lose its food tradegoods as well as being cheaper to build. Now there is 1 rank of Settlement and 3 ranks of city (Town,City and Metropolis). 
+
+[b]Third,[/b] there are now 8 policies that can be applied to the various territories depending on what tradegoods are produced in the territory as well as the rank of the territory. Only one can be active at a time however.
+
+[b]Fourth,[/b] population ratios have been completely changed so that every rank of territory can now have citizens and freemen. This mod will be incompatible with another mod that changes these things because I needed to set ratios for the new rank of town and ended up doing all of them.
+
+Further, citizens now produce a bit of manpower and freemen produce a bit of commerce. Because there are more things requiring gold, that was one way for me to increase income, and I think that citizens shouldn't dodge the draft.
+
+[b]Fifth,[/b] urban development and provincial investments now cost some gold as well as having the political influence cost reduced. Before 1 trade route is almost equal in cost to declaring 4 wars, I mean that is a bit crazy. 
+
+[b]Sixth,[/b] new building "Fishing Harbour" can be built when you are adjacent to a major river or on the coast so that you can fish for some food when you start to run out.
+
+[b]Seventh,[/b] because we now have a fishing harbour, the tradegood Fish has been renamed to Fruit with a new icon that was found somewhere in the game icons folder haha. 
+
+[b]Eighth,[/b] most buildings have been changed somewhat and they have been made slightly more expensive.
+
+[b]Ninth,[/b] terrain has been rebalanced so that pop capacity has been generally increased across the board as well as a few other changes to increase population capacity. Deep in the countryside won't feel so bad now even though the land would be just as useful. Now the main thing capping population will hopefully be food.  
+
+The AI will build towns and they will enact the territory policies. They won't do that too often because the policies do require PI. 
+
+[h1]Thanks[/h1]
+
+Agamidae 
+
+All the dudes on the modding discord, mentions go to Svanley and Arsonium for answering a few questions which helped me with the finishing touches.

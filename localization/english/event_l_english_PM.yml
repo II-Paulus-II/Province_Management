@@ -1,0 +1,8 @@
+﻿l_english:
+ #####################################################################:0 ""
+ # Province Upgrade Events
+ ###################################################################:0 ""
+
+ state_improvement.10.t:0 "The Town of [ROOT.GetProvince.GetName] has been built"
+ state_improvement.10.desc:0 "Our recent decision to construct a new town in [ROOT.GetProvince.GetName] has been shown to be a fruitful decision. Perhaps one day it will grow into a true [ROOT.GetProvince.GetCulture.GetName] city."
+ state_improvement.10.a:0 "Indeed."

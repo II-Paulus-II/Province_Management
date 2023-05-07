@@ -1,0 +1,6 @@
+﻿l_english:
+ #####################################################################:0 ""
+ # Province Upgrade Localization
+ ###################################################################:0 ""
+ BUILD_BUILDINGS_TT:1 "#T Developments#!\n$WHY$\n#TF Develop this territory through setting policies and constructing buildings.#!"
+

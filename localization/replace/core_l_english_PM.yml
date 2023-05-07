@@ -1,0 +1,8 @@
+﻿l_english:
+ #####################################################################
+ # New Stuff
+ #####################################################################
+ foundry_building:0 "Workshop"
+ foundry_building_desc:0 "When a City has certain Trade Goods, a Workshop can be built to increase the number of goods produced."
+ workshop_building:0 "Slave Works"
+ workshop_building_desc:0 "A Slave Works increases the happiness and output of slaves in a Town, City or Metropolis."

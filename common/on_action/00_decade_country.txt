@@ -1,0 +1,6 @@
+﻿decade_country_pulse = {
+	random_events = {
+		50 = 0
+		50 = state_improvement.8	#Toggles Metropolis Status for AI
+	}
+}

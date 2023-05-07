@@ -1,0 +1,28 @@
+﻿
+show_settlement_icon = {
+	scope = province
+	is_shown = {
+		has_province_rank = settlement
+	}
+}
+
+show_town_icon = {
+	scope = province
+	is_shown = {
+		has_province_rank = town
+	}
+}
+
+show_city_icon = {
+	scope = province
+	is_shown = {
+		has_province_rank = city
+	}
+}
+
+show_metropolis_icon = {
+	scope = province
+	is_shown = {
+		has_province_rank = city_metropolis
+	}
+}

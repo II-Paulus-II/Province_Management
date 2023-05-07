@@ -1,0 +1,977 @@
+﻿settlement_food_policy_button = { ###Event:StateImprovement12
+	scope = province
+	confirm_title = "settlement_food_policy_confirm_t"    
+    confirm_text = "settlement_food_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "settlement_food_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = settlement
+			has_province_rank = town 
+			}
+		trigger_if = {
+			limit = {
+				has_province_modifier = settlement_food_policy
+			}
+			NOT = { 
+				has_province_modifier = settlement_food_policy 
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}		
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				trade_goods = grain
+			}
+			NOT = {
+				trade_goods = grain
+			}
+		}
+		trigger_if = {
+			limit = {
+				trade_goods = fish
+			}
+			NOT = {
+				trade_goods = fish
+			}
+		}
+		trigger_if = {
+			limit = {
+				trade_goods = cattle
+			}
+			NOT = {
+				trade_goods = cattle
+			}
+		}
+		trigger_if = {
+			limit = {
+				trade_goods = vegetables
+			}
+			NOT = {
+				trade_goods = vegetables
+			}
+		}
+				
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.12
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = settlement_food_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+local_foodgoods_policy_button = { ###Event:StateImprovement13
+	scope = province
+	confirm_title = "local_foodgoods_policy_confirm_t"    
+    confirm_text = "local_foodgoods_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "local_foodgoods_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = settlement
+			has_province_rank = town 
+			}
+		OR = {
+			trade_goods = grain
+			trade_goods = fish
+			trade_goods = cattle
+			trade_goods = vegetables		
+		}
+
+		trigger_if = {
+			limit = {
+				has_province_modifier = local_foodgoods_policy
+			}
+			NOT = { 
+				has_province_modifier = local_foodgoods_policy
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}			
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.13
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = local_foodgoods_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+local_mining_policy_button = {	###Event:StateImprovement14
+	scope = province
+	confirm_title = "local_mining_policy_confirm_t"    
+    confirm_text = "local_mining_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "local_mining_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = settlement
+			has_province_rank = town
+		}
+		OR = {
+			trade_goods = iron
+			trade_goods = stone
+			trade_goods = precious_metals
+			trade_goods = base_metals
+			trade_goods = marble
+		}
+					
+		trigger_if = {
+			limit = {
+				has_province_modifier = local_mining_policy
+			}
+			NOT = { 
+				has_province_modifier = local_mining_policy
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}			
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.14
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = local_mining_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+local_manpower_policy_button = { ###Event:StateImprovement15
+	scope = province
+	confirm_title = "local_manpower_policy_confirm_t"    
+    confirm_text = "local_manpower_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "local_manpower_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = town
+			has_province_rank = city
+			has_province_rank = city_metropolis
+		}
+
+		trigger_if = {
+			limit = {
+				has_province_modifier = local_manpower_policy
+			}
+			NOT = { 
+				has_province_modifier = local_manpower_policy
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}			
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.15
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = local_manpower_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+wealthy_province_policy_button = {	###Event:StateImprovement16
+	scope = province
+	confirm_title = "wealthy_province_policy_confirm_t"    
+    confirm_text = "wealthy_province_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "wealthy_province_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = town
+			has_province_rank = city
+			has_province_rank = city_metropolis
+		}
+
+		trigger_if = {
+			limit = {
+				has_province_modifier = wealthy_province_policy
+			}
+			NOT = { 
+				has_province_modifier = wealthy_province_policy
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}			
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.16
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = wealthy_province_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+fortified_province_policy_button = {	###Event:StateImprovement17
+	scope = province
+	confirm_title = "fortified_province_policy_confirm_t"    
+    confirm_text = "fortified_province_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "fortified_province_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = town
+			has_province_rank = city
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = fortified_province_policy
+			}
+			NOT = { 
+				has_province_modifier = fortified_province_policy
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}			
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.17
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = fortified_province_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+local_production_policy_button = {	###Event:StateImprovement18
+	scope = province
+	confirm_title = "local_production_policy_confirm_t"    
+    confirm_text = "local_production_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "local_production_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = city
+			has_province_rank = city_metropolis
+		}
+		OR = {
+			trade_goods = wine
+			trade_goods = spices
+			trade_goods = papyrus
+			trade_goods = cloth
+			trade_goods = earthware
+			trade_goods = dye
+			trade_goods = leather
+			trade_goods = incense
+			trade_goods = glass
+			trade_goods = silk
+		}
+
+		trigger_if = {
+			limit = {
+				has_province_modifier = local_production_policy
+			}
+			NOT = { 
+				has_province_modifier = local_production_policy
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}		
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.18
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = local_production_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
+
+local_research_policy_button = {	###Event:StateImprovement19
+	scope = province
+	confirm_title = "local_research_policy_confirm_t"    
+    confirm_text = "local_research_policy_confirm_desc"
+	saved_scopes = {
+		player
+	}
+	is_shown = {
+		owner = scope:player
+	}
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		custom_tooltip = "local_research_policy_button_title_tt"
+		has_construction = no
+		OR = {
+			has_province_rank = city
+			has_province_rank = city_metropolis
+		}
+
+		trigger_if = {
+			limit = {
+				has_province_modifier = local_research_policy
+			}
+			NOT = { 
+				has_province_modifier = local_research_policy
+			}
+		}	
+		trigger_if = {
+			limit = {
+				has_province_modifier = enacting_territory_policy
+			}
+			NOT = { 
+				has_province_modifier = enacting_territory_policy
+			}
+		}		
+		trigger_if = {
+			limit = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+			NOT = {
+				has_province_modifier = revoked_city_status_modifier
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_town_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_town_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_city_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_city_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+			NOT = {
+				has_province_modifier = founding_metropolis_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_province_modifier = urban_development_in_progress
+			}
+			NOT = {
+				has_province_modifier = urban_development_in_progress
+			}
+		}
+		trigger_if = {
+			limit = {
+				scope:player = {
+					NOT = {
+						can_pay_price = price_enact_policy
+					}
+				}
+			}
+			scope:player = {
+				can_pay_price = price_enact_policy
+			}
+		}
+	}
+	effect = {
+		scope:player = {
+			pay_price = price_enact_policy
+		}
+		custom_tooltip = "enacting_policy_tt"
+		hidden_effect = { 
+			add_province_modifier = {
+				name = enacting_territory_policy
+				duration = 84
+			}
+			trigger_event = {
+				id = state_improvement.19
+				days = 84
+			}
+		}
+		show_as_tooltip = {
+			add_province_modifier = {
+				name = local_research_policy
+				duration = -1
+				mode = add
+			}
+		}
+	}
+}
