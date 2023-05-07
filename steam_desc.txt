@@ -1,5 +1,3 @@
-STEAM DESCRIPTION
-
 [h1]UPDATED for Archimedes patch 1.4.[/h1]
 
 This mod has very few changes for patch 1.4  -  Enjoy finding them out.
@@ -71,3 +69,6 @@ The AI will build towns and they will enact the territory policies. They won't d
 Agamidae 
 
 All the dudes on the modding discord, mentions go to Svanley and Arsonium for answering a few questions which helped me with the finishing touches.
+
+GITHUB LINK 
+https://github.com/II-Paulus-II/Province_Management
