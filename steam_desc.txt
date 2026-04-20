@@ -56,9 +56,9 @@ Further, citizens now produce a bit of manpower and freemen produce a bit of com
 
 [b]Fifth,[/b] urban development and provincial investments now cost some gold as well as having the political influence cost reduced. Before 1 trade route is almost equal in cost to declaring 4 wars, I mean that is a bit crazy. 
 
-[b]Sixth,[/b] new building "Fishing Harbour" can be built when you are adjacent to a major river or on the coast so that you can fish for some food when you start to run out.
+[b]Sixth,[/b] new building "fishing Harbour" can be built when you are adjacent to a major river or on the coast so that you can fruit for some food when you start to run out.
 
-[b]Seventh,[/b] because we now have a fishing harbour, the tradegood Fish has been renamed to Fruit with a new icon that was found somewhere in the game icons folder haha. 
+[b]Seventh,[/b] because we now have a fishing harbour, the tradegood fruit has been renamed to Fruit with a new icon that was found somewhere in the game icons folder haha. 
 
 [b]Eighth,[/b] most buildings have been changed somewhat and they have been made slightly more expensive.
 

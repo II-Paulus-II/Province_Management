@@ -1,0 +1,26 @@
+fishery_building = {
+	local_monthly_food = 3
+	local_population_growth = 0.01
+	
+	cost = 75
+	time = 180
+	
+	potential = {
+		OR = {
+			has_province_rank = city
+			has_province_rank = town
+		}
+	}
+	
+	allow = {
+		OR = {
+			is_coastal = yes
+			is_adjacent_to_major_river = yes
+		}
+	}
+	
+	modification_display = {
+		0 = local_monthly_food
+	}
+
+}
