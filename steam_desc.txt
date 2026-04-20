@@ -1,4 +1,6 @@
-[h1]UPDATED for Archimedes patch 1.4.[/h1]
+[h1]Update for Build 2.0.5[/h1]
+
+This will be committed to steam once its updated fully. 
 
 This mod has very few changes for patch 1.4  -  Enjoy finding them out.
 
